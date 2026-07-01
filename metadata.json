@@ -1,0 +1,6 @@
+{
+  "name": "ATS Checker - USA PLACEMENT PROGRAM",
+  "description": "Evalúa si un CV de LATAM pasará los filtros ATS y humanos para puestos remotos en EE.UU., ofreciendo feedback accionable y optimización de palabras clave.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
