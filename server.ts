@@ -142,10 +142,10 @@ Divide tus recomendaciones en viñetas simples y accionables bajo estos tres pil
 "Si realizas los cambios, vuelve a pegar tu CV actualizado aquí abajo para revisarlo nuevamente hasta que logremos el check verde (✅)."
 `;
 
-    const parts: any[] = [];
+    const contents: any[] = [];
 
     if (fileBase64 && (fileMimeType === "application/pdf" || fileName?.endsWith(".pdf"))) {
-      parts.push({
+      contents.push({
         inlineData: {
           data: fileBase64,
           mimeType: "application/pdf"
@@ -161,13 +161,13 @@ Divide tus recomendaciones en viñetas simples y accionables bajo estos tres pil
       userPrompt += `[CV CANDIDATO EN ARCHIVO PDF ADJUNTO. Por favor, lee, analiza y extrae el texto de este archivo PDF.]\n`;
     }
 
-    parts.push({
+    contents.push({
       text: userPrompt
     });
 
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
-      contents: { parts: parts },
+      contents: contents,
       config: {
         systemInstruction: systemInstruction,
         responseMimeType: "application/json",
